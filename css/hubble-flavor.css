@@ -1,0 +1,186 @@
+/* RESET ****************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ * v2.0 | 20110126 * License: none (public domain) */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul,menu{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* COMMONS ***************************************************************/
+body{
+	padding:36px 0 0;
+	font: 15px/1.4em 'Avenir Next LT Pro',Arial, Helvetica, sans-serif;
+}
+
+/* Headers and Paragraph styles */
+h1{font-size:45px;color:#333;line-height:50px;}
+h2{font-size:25px;}
+h2,h3,h4{color:#7bb342;font-weight: bold;line-height:40px;margin-bottom:10px;}
+h3{font-size:18px;}
+h3,h4{text-transform:uppercase;}
+h4{font-size:15px;}
+h5{font-weight: bold;}
+h5,h6{color: #999;}
+p{margin-bottom:15px;}
+
+/* Inline styles */
+strong,em{font-weight: bold;}
+em{font-style: italic;}
+a,a:link,a:visited{color:#0da9c3;text-decoration:none;}
+a:hover,a:active{color:#25C;text-decoration:underline;}
+
+/* Lists (inside the content class)*/
+.content ul{
+	list-style: none inside disc;
+}
+.content ol{
+	list-style: none inside decimal;
+}
+
+/* Elements */
+hr{
+	height:14px;border:none;background:#0da9c3;margin:20px 0;
+}
+hr.simple{
+	height:0;background:transparent;border-bottom: dotted 1px #CCC;
+}
+.icon{
+	background:#EEE;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	text-indent:-9999px;
+	text-indent:-9999px;
+}
+menu a{
+	display: block;
+	text-decoration:none;
+}
+.blue{
+	color: #0056a8;
+}
+.description{
+	font-size:45px;
+	line-height:50px;
+	color:#0da9c3;
+	margin-bottom: 40px;
+}
+
+/* LAYOUT ***********************************************************************/
+/* Clearfix */
+.clearfix:before, .clearfix:after,.row:before, .row:after { content: ""; display: table; }
+.clearfix:after,.row:after { clear: both; }
+.clearfix,.row { zoom: 1; }
+.wrap{
+	max-width:960px;
+	padding:0 10px;
+	margin:0 auto;
+}
+.row{
+	margin:0 -4% 20px 0;
+}
+.col{
+	width:30%;
+	margin:0 3% 0 0;
+	float:left;
+	padding-bottom:5px;
+}
+.col.double{
+	width:63%;
+	margin:0 3% 0 0;
+	float:left;
+}
+.col h3,.col h4,.col .description{font-size:20px;text-transform:none;color:#333;}
+.col .description{line-height: 28px;font-weight: bold;padding-top:6px;}
+.col h4{font-size:15px;color:#0da9c3;line-height: 15px;margin:0;}
+
+.col.blue{
+	background:#0055A5;color:#FFF;padding-bottom:20px;min-height:300px;
+}
+.col.blue h3,
+.col.blue h4,
+.col.blue p,
+.col.blue .description{
+	color:#FFF;
+	margin:12px;
+}
+
+/* SECTIONS ***********************************************************************************/
+/* Article */
+article.main{
+	padding:20px 0;
+}
+
+/* Header */
+header.main .quick-links{
+	background:#0055a5;
+	position: fixed;
+	padding: 8px 0;
+	top:0;
+	left:0;
+	right:0;
+}
+header.main .quick-links nav .icon{
+	float:right;
+	margin-left:5px;
+}
+.logo-main{
+	margin:28px 0 0;
+	display:block;
+}
+header.main .phone{
+	float:right;
+	line-height: 48px;
+}
+
+/* Menu */
+header.main menu li{
+	display: inline-block;
+	margin-right:15px;
+}
+.primary-back{
+	border-bottom: solid 1px #C0EAF1;
+}
+menu.primary{
+	line-height: 48px;
+}
+menu.primary a{
+	color:#000;
+}
+menu.primary .current a{
+	color: #0056a8;
+	font-weight: bold;
+}
+.secondary-back{
+	border-bottom: solid 1px #C0EAF1;
+	background: #EDFBFE;
+}
+menu.secondary{
+	font-size: 12px;
+	line-height: 32px;
+}
+menu.secondary li{
+	position:relative;
+	top:-1px;
+}
+menu.secondary a{
+	color:#666;
+}
+menu.secondary .current a{
+	color: #0056a8;
+	font-weight: bold;
+	background: url('../img/sprite.png') no-repeat center top;
+}
+
+/* Footer */
+footer.main{
+	background: #f1f0eb;
+	padding:38px 0;
+}
+.copyright{
+	text-align:center;
+	font-size: 14px;
+}
+
+
+
+
+
+
+

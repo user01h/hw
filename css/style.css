@@ -1,0 +1,14 @@
+/* Home *****************************************/
+#summary-slider{
+	background:#EEE;
+	height:307px;
+}
+#clients-slider{
+	background:#EEE;
+	height:120px;
+}
+.home .clients-featured{
+	width:33%;
+	margin: 0 auto 15px;
+	text-align:center;
+}
