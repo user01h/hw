@@ -1,14 +1,77 @@
+@charset "UTF-8";
+/* ALL *******************************************/
+.addthis_toolbox{
+	float:right;
+}
+
 /* Home *****************************************/
-#summary-slider{
-	background:#EEE;
-	height:307px;
+
+#summary-slider img{
+	display:block;
+	width:100%;
+	max-width:972px;
+	margin:0 auto;
 }
-#clients-slider{
-	background:#EEE;
-	height:120px;
+
+#clients-slider img{
+	display:block;
+	width:100%;
+	max-width:106px;
+	margin:0 auto;
 }
+
 .home .clients-featured{
 	width:33%;
 	margin: 0 auto 15px;
 	text-align:center;
+}
+
+
+/* Services ********************************************/
+.services-graph{
+	margin:30px 0 0;
+}
+.sidebar-temp{
+	padding-top: 50px;
+}
+
+/* People ************************************************/
+.featured-people .icon{
+	width:99px;
+	height:120px;
+	background: #FFF url('../img/people-icons-temp.gif') center 0 no-repeat;
+	float:left;
+	margin-bottom:20px;
+}
+#family{
+	background-position: center -120px;
+}
+#trainig{
+	background-position: center -250px;
+}
+#tech{
+	background-position: center -400px;
+}
+#flexib{
+	background-position: center -540px;
+}
+.featured-people .text{
+	margin-left:120px;
+}
+.jobs-opening h3{
+	color:#0da9c3;
+}
+.jobs-opening h5{
+	color:#000;
+}
+.jobs-opening .double{
+	padding-top:14px;
+}
+
+/* MEDIA QUERIES ************************************************************************/
+/* Tablet Portrait */
+@media only screen and (max-width: 810px) {
+	.home .clients-featured{
+		width:100%;
+	}
 }

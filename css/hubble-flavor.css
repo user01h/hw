@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* RESET ****************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ * v2.0 | 20110126 * License: none (public domain) */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul,menu{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
@@ -5,17 +6,18 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* COMMONS ***************************************************************/
 body{
 	padding:36px 0 0;
-	font: 15px/1.4em 'Avenir Next LT Pro',Arial, Helvetica, sans-serif;
+	font: 14px/1.4em 'Avenir LT W01 55 Roman',Arial, Helvetica, sans-serif;
 }
 
 /* Headers and Paragraph styles */
+h2,h3,h4,h5{font-family:'Avenir LT W01 85 Heavy',Arial, Helvetica, sans-serif;}
 h1{font-size:45px;color:#333;line-height:50px;}
 h2{font-size:25px;}
-h2,h3,h4{color:#7bb342;font-weight: bold;line-height:40px;margin-bottom:10px;}
+h2,h3,h4{color:#7bb342;line-height:40px;margin-bottom:10px;}
 h3{font-size:18px;}
 h3,h4{text-transform:uppercase;}
 h4{font-size:15px;}
-h5{font-weight: bold;}
+
 h5,h6{color: #999;}
 p{margin-bottom:15px;}
 
@@ -26,10 +28,10 @@ a,a:link,a:visited{color:#0da9c3;text-decoration:none;}
 a:hover,a:active{color:#25C;text-decoration:underline;}
 
 /* Lists (inside the content class)*/
-.content ul{
+ul.list{
 	list-style: none inside disc;
 }
-.content ol{
+ol{
 	list-style: none inside decimal;
 }
 
@@ -37,20 +39,34 @@ a:hover,a:active{color:#25C;text-decoration:underline;}
 hr{
 	height:14px;border:none;background:#0da9c3;margin:20px 0;
 }
+.ie7 hr{
+	border-top: solid 14px #0da9c3;
+}
+hr.transparent{
+	background:transparent;
+}
+.ie7 hr.transparent{
+	border-top: solid 14px transparent;
+}
 hr.simple{
 	height:0;background:transparent;border-bottom: dotted 1px #CCC;
 }
+hr.line-2-3{
+	margin-left:34%;
+}
 .icon{
-	background:#EEE;
 	width:20px;
 	height:20px;
 	display:inline-block;
 	text-indent:-9999px;
 	text-indent:-9999px;
 }
-menu a{
+menu li a{
 	display: block;
 	text-decoration:none;
+}
+.phone a, a.phone{
+	font-weight:bold;
 }
 .blue{
 	color: #0056a8;
@@ -61,12 +77,20 @@ menu a{
 	color:#0da9c3;
 	margin-bottom: 40px;
 }
-
+ul.feed-list{
+	list-style: none;color:#0993aa;font-size: 13px;line-height: 16px;
+}
+ul.feed-list li{
+	margin-bottom:20px;
+}
+time{
+	display:block;
+}
 /* LAYOUT ***********************************************************************/
 /* Clearfix */
-.clearfix:before, .clearfix:after,.row:before, .row:after { content: ""; display: table; }
-.clearfix:after,.row:after { clear: both; }
-.clearfix,.row { zoom: 1; }
+.clearfix:before, .clearfix:after,.row:before, .row:after,article:before,article:after { content: ""; display: table; }
+.clearfix:after,.row:after,article:after  { clear: both; }
+.clearfix,.row,article{ zoom: 1; }
 .wrap{
 	max-width:960px;
 	padding:0 10px;
@@ -86,31 +110,42 @@ menu a{
 	margin:0 3% 0 0;
 	float:left;
 }
-.col h3,.col h4,.col .description{font-size:20px;text-transform:none;color:#333;}
+.col.half{
+	width:47%;
+}
+.col h3,.col h5,.col .description{font-size:20px;text-transform:none;color:#333;}
 .col .description{line-height: 28px;font-weight: bold;padding-top:6px;}
-.col h4{font-size:15px;color:#0da9c3;line-height: 15px;margin:0;}
-
+.col h5{font-size:15px;color:#0da9c3;line-height: 15px;margin:0;}
+.col img{
+	width:100%;display:block;
+}
 .col.blue{
 	background:#0055A5;color:#FFF;padding-bottom:20px;min-height:300px;
 }
 .col.blue h3,
-.col.blue h4,
+.col.blue h5,
 .col.blue p,
 .col.blue .description{
 	color:#FFF;
-	margin:12px;
+	margin:0 12px 12px;
 }
-
+.fixer{
+	background:#FFF;
+	z-index:999;
+	width:100%;
+}
 /* SECTIONS ***********************************************************************************/
 /* Article */
 article.main{
-	padding:20px 0;
+	padding-top:20px;
+	padding-bottom:20px;
 }
 
 /* Header */
 header.main .quick-links{
 	background:#0055a5;
 	position: fixed;
+	z-index:1000;
 	padding: 8px 0;
 	top:0;
 	left:0;
@@ -118,32 +153,60 @@ header.main .quick-links{
 }
 header.main .quick-links nav .icon{
 	float:right;
+	height:19px;
 	margin-left:5px;
+	background: url('../img/sprite.png') center 0 no-repeat;
 }
+#feed-icon{
+	background-position: center -100px;
+}
+#fb-icon{
+	background-position: center -80px;
+}
+#twitter-icon{
+	background-position: center -60px;
+}
+#googleplus-icon{
+	background-position: center -40px;
+}
+#linkedin-icon{
+	background-position: center -20px;
+}
+
 .logo-main{
-	margin:28px 0 0;
+	padding:26px 0;
 	display:block;
 }
 header.main .phone{
-	float:right;
+	position: absolute;
+	top:0;
+	right:10px;
 	line-height: 48px;
 }
-
+header.main .phone.sup{display:none;position:relative !important;line-height:19px;text-align: right;color:#FFF;}
+header.main .phone.sup a{color:#FFF;}
 /* Menu */
 header.main menu li{
 	display: inline-block;
 	margin-right:15px;
 }
+
+.ie7 header.main menu li{
+	
+	float: left;
+}
+
 .primary-back{
 	border-bottom: solid 1px #C0EAF1;
 }
 menu.primary{
 	line-height: 48px;
+	position: relative;
 }
-menu.primary a{
+menu.primary li a{
 	color:#000;
 }
-menu.primary .current a{
+menu.primary li.current a{
 	color: #0056a8;
 	font-weight: bold;
 }
@@ -159,13 +222,13 @@ menu.secondary li{
 	position:relative;
 	top:-1px;
 }
-menu.secondary a{
+menu.secondary li a{
 	color:#666;
 }
-menu.secondary .current a{
+menu.secondary li.current a{
 	color: #0056a8;
 	font-weight: bold;
-	background: url('../img/sprite.png') no-repeat center top;
+	background: url('../img/sprite.png') no-repeat center -120px;
 }
 
 /* Footer */
@@ -178,9 +241,141 @@ footer.main{
 	font-size: 14px;
 }
 
+/* Slider */
+.slider{
+	position:relative;
+	overflow:hidden;
+}
+.slider > ul{
+	position:absolute;
+	top:0;left:0;
+}
+.slider > ul > li{
+	float:left;
+}
+.slider .slider-btn{
+	position:absolute;
+	top:50%;
+	left:5px;
+	
+	display:block;
+	width: 64px;
+	height: 64px;
+	margin-top:-32px;
+	
+	background: url('../img/banner/arrows.png') 0 center no-repeat;
+	text-indent:-9999px;
+	opacity: 0.6;
+}
+.slider .slider-btn:hover{
+	opacity: 1;
+}
+.slider #slider-btn-next{
+	left:auto;
+	right:5px;
+	background-position: -64px center;	
+}
+
+/* MEDIA QUERIES ************************************************************************/
+/* Layout */
+@media only screen {
+	body{overflow-x: hidden;}
+}
+@media screen and (max-device-width: 1060px) {
+	.slider .slider-btn{
+		display:none;
+	}
+}
+/* Tablet Landscape */
+@media only screen and (max-width: 1024px) {
+	.wrap{
+		padding:0;
+		width: 769px;
+	}
+	
+	header.main .phone{right:0;}
+}
+
+/* Tablet Portrait */
+@media only screen and (max-width: 810px) {
+	.wrap{
+		width: 670px;
+	}
+	.row{
+		margin-right:-6%;
+	}
+	.col,.col.double,.col.half{
+		width:44%;
+		margin:0 6% 10px 0;
+	}
+	hr.line-2-3{margin-left:0;}
+	
+	
+	
+}
+
+/* Smartphone Landscape */
+@media only screen and (max-width: 700px) {
+	h1{font-size:22px;line-height:28px;font-weight: bold;}
+	h2, h3, h4 {
+	    line-height: 35px;
+	    margin-bottom: 0;
+	}
+	.description{
+		font-size:22px;
+		line-height:28px;
+		color:#333;
+		margin-bottom: 20px;
+	}
+	
+	
+	.wrap{
+		width: 480px;
+	}
+	.row{
+		margin-right:0;
+	}
+	.col,.col.double,.col.half{
+		width:100%;
+		margin:0 0 15px;
+	}
+	
+	header.main menu li{
+		margin-right:10px;
+	}
+	menu.primary{
+		line-height: 28px;
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	.secondary-back{
+		display:none;
+	}
+	header.main .phone.inf,
+	header.main .quick-links nav{display:none;}
+	header.main .phone.sup{display:block;}
+
+}
 
 
-
+@media only screen and (max-width: 520px) {
+	.wrap{
+		width: 390px;
+	}
+	.row{
+		margin-right:0;
+	}
+	.col,.col.double,.col.half{
+		width:100%;
+		margin:0 0 15px;
+	}
+}
+/* Smartphone Portrait */
+@media only screen and (max-width: 400px) {
+	.wrap{
+		width: 280px;
+	}
+}
 
 
 
